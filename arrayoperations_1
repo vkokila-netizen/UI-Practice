@@ -1,0 +1,22 @@
+// Return index of two numbers in an array that add up to the target.
+// Num = [ 1,2,3,4,7] target = 9  output - [1,4]
+
+
+function twoSum(nums, target) {
+  const seen = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    const complement = target - nums[i];
+    if (seen.has(complement)) {
+      return [seen.get(complement), i];
+    }
+    seen.set(nums[i], i);
+  }
+
+  return []
+}
+
+// Example
+const nums = [1, 2, 3, 4, 7];
+const target = 9;
+console.log(twoSum(nums, target));
