@@ -1,0 +1,40 @@
+First Non-Repeated Characters
+Ex1- Input: str=”hello”
+        Output: “h”
+Ex2- Input: str=”hhello”
+        Output: “e”
+
+
+
+
+program to find the first non repeated character
+
+let testString ="madam";
+
+let found= false;
+
+
+// to find the first non repeated character 
+
+for(let i=0;i<=testString.length;i++){
+  
+  let isUnique = true;
+  
+  for(j= i+1; j<=testString.length; j++) {
+    
+    if(testString[i] == testString[j]){
+      isUnique = false;
+      break;  
+    }
+    
+  }
+  
+    if(isUnique)
+  {
+    console.log('the non repeated character is :::: ', testString[i]);
+    break;
+  }
+  
+
+  
+}
