@@ -1,0 +1,24 @@
+function rearrangeArray(arr) {
+  let positives = arr.filter(num => num > 0);
+  let negatives = arr.filter(num => num < 0);
+
+  let result = [];
+  let i = 0, j = 0;
+
+  // alternate between positives and negatives
+  while (i < positives.length && j < negatives.length) {
+    result.push(positives[i++]);
+    result.push(negatives[j++]);
+  }
+
+  // if any remain, append them
+  while (i < positives.length) result.push(positives[i++]);
+  while (j < negatives.length) result.push(negatives[j++]);
+
+  return result;
+}
+
+// Test
+console.log(rearrangeArray([3, 1, -2, -5, 2, -4, -5, -7]));  // [3, -2, 1, -5, 2, -4]
+console.log(rearrangeArray([1, 2, 3]));              // [1, 2, 3]
+console.log(rearrangeArray([-1, -2, -3]));           // [-1, -2, -3]
